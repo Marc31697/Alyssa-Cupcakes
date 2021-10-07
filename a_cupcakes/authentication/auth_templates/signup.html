@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<main class="container signup-container">
+    <div class="row signup-items">
+        <aside class="col-12 col-md-6">
+            <div class="inq-body">
+                <form action="" method="POST">
+                    {{ form.hidden_tag() }}
+                    <div class="login-box">
+                        <h1 style="text-align: center;">Sign Up</h1>
+                        <fieldset class="user-box">
+                            {{ form.first_name(class = "form-control") }}
+                            <label>First Name</label>
+                        </fieldset>
+                        <fieldset class="user-box">
+                            {{ form.last_name(class = "form-control") }}
+                            <label>Last Name</label>
+                        </fieldset>
+                        <fieldset class="user-box">
+                            {{ form.email(class = "form-control") }}
+                            <label>Email</label>
+                        </fieldset>
+                        <fieldset class="user-box">
+                            {{ form.password(class = "form-control") }}
+                            <label>Password</label>
+                        </fieldset>
+                        {{ form.submit_button(class = "btn btn-primary btn-block") }}
+                    </div>
+                </form>
+            </div>
+        </aside>
+        <aside class="col-12 col-md-6">
+            
+        </aside>
+    </div>
+</main>
+
+{% endblock content %}

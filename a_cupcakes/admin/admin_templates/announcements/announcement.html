@@ -1,0 +1,28 @@
+{% import "bootstrap/wtf.html" as wtf %}
+{% extends 'admin_base.html' %}
+
+
+{% block body %}
+{% if add_announcement %}
+    Add Announcement
+{% else %}
+    Edit Announcement
+{% endif %}
+<div class="content-section">
+    <div class="outer">
+       <div class="middle">
+         <div class="inner">
+           <div class="center">
+               {% if add_announcement %}
+                   <h1>Add Announcement</h1>
+               {% else %}
+                   <h1>Edit Announcement</h1>
+               {% endif %}
+               <br/>
+               {{ wtf.quick_form(form) }}
+           </div>
+         </div>
+       </div>
+     </div>
+   </div>
+{% endblock %}

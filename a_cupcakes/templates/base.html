@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="Description" content="Enter your description here"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css')}}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet">
+<title>Alyssa's Cupcakes</title>
+</head>
+<body>
+    <!-- NavBar -->
+    <header id="mainNav">
+        <div class="container-nav">
+            <nav>  
+                <ul>
+                    <a href="{{ url_for('site.home') }}"><li>Home</li></a>
+                    <a href="{{ url_for('site.menu') }}"><li>Menu</li></a>
+                    <a href="{{ url_for('site.inquiries') }}"><li>Inquiries</li></a>
+                    {% if current_user.is_authenticated %}
+                        {% if current_user.admin %}
+                        <a href="{{ url_for('admin.admin_dashboard') }}"><li>Dashboard</li></a>
+                        {% endif %}
+                    <a href="{{ url_for('auth.logout')}}"><li>Log Out</li></a>
+                    {% else %}
+                    <a href="{{ url_for('auth.signin') }}"><li>Sign In</li></a>
+                    <a href="{{ url_for('auth.signup') }}"><li>Sign Up Free</li></a>
+                    {% endif %}
+                    <a href="{{ url_for('site.reviews') }}"><li>Reviews</li></a>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <!-- End NavBar -->
+    {% block content %}
+    
+    {% endblock content %}
+<script src="../static/js/main.js" async></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js"></script>
+</body>
+</html>

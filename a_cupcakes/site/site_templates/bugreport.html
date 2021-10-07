@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<main class="container signup-container">
+    <div class="row signup-items">
+        <aside class="col-12 col-md-6">
+            <div class="inq-body">
+                <form action="" method="POST" class="inq-form">
+                    {{ form.hidden_tag() }}
+                    <div class="login-box">
+                        <h2>Send In Your Bug Report</h2>
+                        <fieldset>
+                            <label>Please provide as much information as possible in the area below describing the issue</label>
+                            {{ form.report(class ="feedback-input", placeholder="Report Information Here") }}
+                        </fieldset>
+                        {{ form.submit_button(class = "btn btn-primary btn-block") }}
+                    </div>
+                    </form>
+            </div>
+        </aside>
+        <aside class="col-12 col-md-6">
+            
+        </aside>
+    </div>
+</main>
+
+{% endblock content %}

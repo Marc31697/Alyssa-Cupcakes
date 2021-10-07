@@ -1,0 +1,810 @@
+body{
+    background-color: rgba(1, 1, 7, 0.911);
+    color: white;
+}
+
+/* Nav Styles */
+.container-nav {
+    font-weight: 800;
+    font-family: 'Parisienne', cursive;
+    width: 60%;
+    margin: auto;
+    text-align: center;
+}
+  
+#mainNav {
+    background: rgb(236, 147, 217);
+    text-decoration: none;
+}
+  
+header::after {
+    content: '';
+    display: table;
+    clear: both;
+}
+  
+nav {
+    float: center;
+}
+  
+nav ul{
+    margin: 0;
+    padding: 0;
+    list-style:none;
+}
+  
+nav a{
+    display: inline-block;
+    margin-left: 70px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    position: relative;
+    text-decoration: none;
+}
+  
+nav li{
+    color: black;
+    text-decoration: none;
+    font-size: 25px;
+}
+  
+nav li:hover{
+    color: #000;
+}
+  
+nav li::before {
+    content: '';
+    display: block;
+    height: 5px;
+    background-color: #444;
+    position: absolute;
+    top: 0;
+    width: 0%;
+    transition: all ease-in-out 250ms;
+}
+  
+nav li:hover::before {
+    width: 100%;
+}
+
+/* End of nav */
+
+/* Start of Header Section */
+#header-text{
+    color: black;
+    position: absolute;
+    top: 27%;
+}
+#head{
+    height: 500px;
+    justify-content: center;
+    text-align: center;
+    background-image: url(../../static/images/cupcakes_placeholder.jpg);
+}
+/* End of Header Section */
+
+/* Start of Announcements Styles */
+.announcements-block{
+    height: 500px;
+    width: 100%;
+}
+
+.announcements-header{
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 20%;
+    height: 50px;
+}
+
+.announcements-header-text{
+    color: white;
+    display: flex;
+    justify-content: center;
+    font-size: 25px;
+}
+
+.announcements{
+    display:block;
+    height: 200px;
+    width: 100%;
+}
+
+.announcements-box{
+    border: 1px solid rgba(71, 69, 69, 0.801);
+    border-radius: 50px;
+    padding: 5px;
+    margin-bottom: 1vh;
+}
+
+.profile-pic-box{
+    display: flex;
+    width: 25%;
+}
+
+.profile-pic{
+    display:flex;
+    margin-left: 30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 100px;
+    margin-top: 5px;
+}
+
+.profile-text{
+    display:block;
+    margin-left: 10px;
+}
+
+.profile-name{
+    font-size: 25px;
+}
+
+.announcement-date{
+    display:block;
+    font-size: 13px;
+}
+
+.pages_buttons{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+/* End of Announcements Styles */
+
+/* Start of End Section Styles */
+#end-text{
+    text-align: center;
+    padding: 13vh;
+}
+
+.cloud{
+    display: flex;
+    margin-top:70px;
+    width:350px;
+    height:120px;
+    background:#ECEFF1;
+    box-shadow: 10px 10px rgba(0,0,0,0.2);
+    border-radius:100px;
+    position: relative;
+ }
+.cloud::before{
+    content:"";
+    position:relative;
+    display:inline-block;
+    background:inherit;
+    border-radius:inherit;
+ }
+.cloud::after{
+    width:100px;
+    height:100px;
+    top:-220px;
+    left:50px;
+ }
+.cloud::before{
+    width:180px;
+    height:180px;
+    top: -70px;
+    left:130px;
+ }
+
+.cloud2{
+    display: flex;
+    float: right;
+    margin-top:70px;
+    width:350px;
+    height:120px;
+    background:#ECEFF1;
+    box-shadow: -10px 10px rgba(0,0,0,0.2);
+    border-radius:100px;
+    position: relative;
+ }
+.cloud2::before{
+    content:"";
+    position:relative;
+    display:inline-block;
+    background:inherit;
+    border-radius:inherit;
+ }
+.cloud2::before{
+    width:180px;
+    height:180px;
+    top: -70px;
+    left:45px;
+ }
+/* End of End Section Styles */
+
+/* Start of Footer Section Styles */
+#footer-text-flex{
+    display: flex;
+    flex-direction: column;
+    margin-top: 3vh;
+}
+
+#footer-logo{
+    width: 125%;
+    height: 87%;
+    max-width: 100%;
+    padding: 10px;
+}
+
+#footer{
+    justify-content: center;
+    border-top: 3px solid black;
+    margin-top: 20vh;
+}
+/* End of Footer Section Styles */
+
+/* Profile Styles Section */
+.hero-section{
+    height: 95vh;
+    background-image: linear-gradient(to right bottom,rgba(30,115,172,0.7), rgba(142,57,153,0.6)), url(../images/teentitanss.jpg);
+    background-size: cover;
+    background-position: 35%;
+    -webkit-clip-path: polygon(0, 0, 100% 0, 100% 80vh, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%);
+    position: relative;
+}
+
+.header-text{
+    display: flex;
+    justify-content: center;
+    padding-top: 20%;
+    left: 20rem;
+    top: 10rem;
+    color: white;
+}
+
+/* Reviews Page */
+.review-item{
+    display: flex;
+    justify-content: center;
+    margin-top: 2vh;
+}
+/* End Reviews */
+
+/* Admin Views */
+.outer {
+    display: table;
+    position: absolute;
+    height: 70%;
+    width: 100%;
+}
+
+.middle {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.inner {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* End Admin Views */
+
+/* Start of Signup/Signin Styles */
+
+.inq-body {
+margin:0;
+padding:0;
+font-family: sans-serif;
+background: linear-gradient(#141e30, #243b55);
+}
+
+.login-box {
+position: absolute;
+top: 50%;
+left: 50%;
+width: 400px;
+padding: 40px;
+transform: translate(-50%, -50%);
+background: rgba(0,0,0,.5);
+box-sizing: border-box;
+box-shadow: 0 15px 25px rgba(0,0,0,.6);
+border-radius: 10px;
+}
+
+.login-box h2 {
+margin: 0 0 30px;
+padding: 0;
+color: #fff;
+text-align: center;
+}
+
+.login-box .user-box {
+position: relative;
+}
+
+.login-box .user-box input {
+width: 100%;
+padding: 10px 0;
+font-size: 16px;
+color: #fff;
+margin-bottom: 30px;
+border: none;
+border-bottom: 1px solid #fff;
+outline: none;
+background: transparent;
+}
+.login-box .user-box label {
+position: absolute;
+top:0;
+left: 0;
+padding: 10px 0;
+font-size: 16px;
+color: #fff;
+pointer-events: none;
+transition: .5s;
+}
+
+.login-box .user-box input:focus ~ label,
+.login-box .user-box input:valid ~ label {
+top: -20px;
+left: 0;
+color: #03e9f4;
+font-size: 12px;
+}
+
+.login-box form a {
+position: relative;
+display: inline-block;
+padding: 10px 20px;
+color: #03e9f4;
+font-size: 16px;
+text-decoration: none;
+text-transform: uppercase;
+overflow: hidden;
+transition: .5s;
+margin-top: 40px;
+letter-spacing: 4px
+}
+
+.login-box a:hover {
+background: #03e9f4;
+color: #fff;
+border-radius: 5px;
+box-shadow: 0 0 5px #03e9f4,
+            0 0 25px #03e9f4,
+            0 0 50px #03e9f4,
+            0 0 100px #03e9f4;
+}
+
+.login-box a span {
+position: absolute;
+display: block;
+}
+
+.login-box a span:nth-child(1) {
+top: 0;
+left: -100%;
+width: 100%;
+height: 2px;
+background: linear-gradient(90deg, transparent, #03e9f4);
+animation: btn-anim1 1s linear infinite;
+}
+
+@keyframes btn-anim1 {
+0% {
+    left: -100%;
+}
+50%,100% {
+    left: 100%;
+}
+}
+
+.login-box a span:nth-child(2) {
+top: -100%;
+right: 0;
+width: 2px;
+height: 100%;
+background: linear-gradient(180deg, transparent, #03e9f4);
+animation: btn-anim2 1s linear infinite;
+animation-delay: .25s
+}
+
+@keyframes btn-anim2 {
+0% {
+    top: -100%;
+}
+50%,100% {
+    top: 100%;
+}
+}
+
+.login-box a span:nth-child(3) {
+bottom: 0;
+right: -100%;
+width: 100%;
+height: 2px;
+background: linear-gradient(270deg, transparent, #03e9f4);
+animation: btn-anim3 1s linear infinite;
+animation-delay: .5s
+}
+
+@keyframes btn-anim3 {
+0% {
+    right: -100%;
+}
+50%,100% {
+    right: 100%;
+}
+}
+
+.login-box a span:nth-child(4) {
+bottom: -100%;
+left: 0;
+width: 2px;
+height: 100%;
+background: linear-gradient(360deg, transparent, #03e9f4);
+animation: btn-anim4 1s linear infinite;
+animation-delay: .75s
+}
+
+@keyframes btn-anim4 {
+0% {
+    bottom: -100%;
+}
+50%,100% {
+    bottom: 100%;
+}
+}
+
+.login-fail{
+    width: 50%;
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15px;
+    
+}
+/* End of Signup/Signin Styles */
+
+/* Start of Inquiry Styles */
+.inq-body { background:rgb(30,30,40); }
+.inq-form { max-width:420px; margin:50px auto; }
+
+.feedback-input {
+  color:white;
+  font-weight:500;
+  font-size: 18px;
+  border-radius: 5px;
+  line-height: 22px;
+  background-color: transparent;
+  border:2px solid #ffadf1;
+  transition: all 0.3s;
+  padding: 13px;
+  margin-bottom: 15px;
+  width:100%;
+  box-sizing: border-box;
+  outline:0;
+}
+
+.feedback-input:focus { border:2px solid #ffadf1; }
+
+[type="submit"] {
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+  width: 100%;
+  background:#ffadf1;
+  border-radius:5px;
+  border:0;
+  cursor:pointer;
+  color:white;
+  font-size:24px;
+  padding-top:10px;
+  padding-bottom:10px;
+  transition: all 0.3s;
+  margin-top:-4px;
+  font-weight:700;
+}
+[type="submit"]:hover { background:#ffadf1; }
+/* End of Inquiry Styles */
+
+/* Start of Menu Styles */
+
+.shopping-body{
+    color: white;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+}
+
+.main-header {
+    background-color: rgba(0, 0, 0, .6);
+    background-image: url("Images/Header Background.jpg");
+    background-blend-mode: multiply;
+    background-size: cover;
+    padding-bottom: 30px;
+}
+
+.band-name {
+    text-align: center;
+    margin: 0;
+    font-size: 4em;
+    font-family: "Booter - Zero Zero";
+    font-weight: normal;
+    color: white;
+}
+
+.band-name-large {
+    font-size: 8em;
+}
+
+.content-section {
+    text-align: center;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 1.5em;
+}
+.section-header {
+    font-family: "Metal Mania";
+    font-weight: normal;
+    color: white;
+    text-align: center;
+    font-size: 2.5em;
+}
+
+.about-band-image {
+    float: left;
+    height: 200px;
+    width: 200px;
+    margin: 15px;
+    border-radius: 50%;
+}
+
+.main-footer {
+    background-color: #56CCF2;
+    color: white;
+    padding: .25em 0;
+}
+
+.main-footer-container {
+    display: flex;
+    align-items: center;
+}
+
+.main-footer-container ul {
+    flex-grow: 1;
+    text-align: end;
+}
+
+.footer-nav li {
+    padding: 0 .5em;
+}
+
+.footer-nav img {
+    width: 30px;
+    height: 30px;
+}
+
+.btn {
+    text-align: center;
+    vertical-align: middle;
+    padding: .67em .67em;
+    cursor: pointer;
+}
+
+.btn-header {
+    margin: .5em 15% 2em 15%;
+    color: white;
+    border: 2px solid #2D9CDB;
+    background-color: rgba(255, 255, 255, .1);
+    border-radius: 0;
+    font-size: 1.5em;
+    font-weight: lighter;
+    padding-left: 2em;
+    padding-right: 2em;
+}
+
+.btn-header:hover {
+    background-color: rgba(255, 255, 255, .3);
+}
+
+.btn-play {
+    display: block;
+    margin: 0 auto;
+    color: #2D9CDB;
+    font-size: 4em;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    padding: 0;
+    text-align: center;
+}
+
+.btn-primary {
+    color: white;
+    background-color: #56CCF2;
+    border: none;
+    border-radius: .3em;
+    font-weight: bold;
+}
+
+.btn-primary:hover {
+    background-color: #2D9CDB;
+}
+
+.tour-row {
+    border-bottom: 1px solid black;
+    padding-bottom: 1em;
+    margin-bottom: 1em;
+}
+
+.tour-row:last-child {
+    border: none;
+}
+
+.tour-item {
+    display: inline-block;
+    padding-right: .5em;
+}
+
+.tour-date {
+    color: #555;
+    width: 11%;
+    font-weight: bold;
+}
+
+.tour-city {
+    width: 24%;
+}
+
+.tour-arena {
+    width: 42%;
+}
+
+.tour-btn {
+    max-width: 19%;
+}
+
+.shop-item {
+    margin: 30px;
+}
+
+.shop-item-title {
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.5em;
+    color: white;
+    margin-bottom: 15px;
+}
+
+.shop-item-image {
+    height: 250px;
+}
+
+.shop-item-details {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+}
+
+.shop-item-price {
+    flex-grow: 1;
+    color: white;
+    text-align: center;
+}
+
+.shop-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.cart-header {
+    font-weight: bold;
+    font-size: 1.25em;
+    color: white;
+}
+
+.cart-column {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid black;
+    margin-right: 1.5em;
+    padding-bottom: 10px;
+    margin-top: 10px;
+}
+
+.cart-row {
+    display: flex;
+}
+
+.cart-item {
+    width: 45%;
+}
+
+.cart-price {
+    width: 20%;
+    font-size: 1.2em;
+    color: white;
+}
+
+.cart-quantity {
+    width: 35%;
+}
+
+.cart-item-title {
+    color: white;
+    margin-left: .5em;
+    font-size: 1.2em;
+}
+
+.cart-item-image {
+    width: 75px;
+    height: auto;
+    border-radius: 10px;
+}
+
+.btn-danger {
+    color: white;
+    background-color: #EB5757;
+    border: none;
+    border-radius: .3em;
+    font-weight: bold;
+}
+
+.btn-danger:hover {
+    background-color: #CC4C4C;
+}
+
+.cart-quantity-input {
+    height: 34px;
+    width: 50px;
+    border-radius: 5px;
+    border: 1px solid #56CCF2;
+    background-color: rgba(0, 0, 0, 0.096);
+    color: white;
+    padding: 0;
+    text-align: center;
+    font-size: 1.2em;
+    margin-right: 25px;
+}
+
+.cart-row:last-child {
+    border-bottom: 1px solid black;
+}
+
+.cart-row:last-child .cart-column {
+    border: none;
+}
+
+.cart-total {
+    text-align: end;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+.cart-total-title {
+    font-weight: bold;
+    font-size: 1.5em;
+    color: white;
+    margin-right: 20px;
+}
+
+.cart-total-price {
+    color: white;
+    font-size: 1.1em;
+}
+
+.btn-purchase {
+    display: block;
+    margin: 40px auto 80px auto;
+    font-size: 1.75em;
+}
+
+.shop-item-button{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* End of Menu Styles */

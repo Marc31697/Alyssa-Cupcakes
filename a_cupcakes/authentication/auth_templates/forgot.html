@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-offset-3 col-md-6">
+        {% if error %}
+        <div class="alert alert-danger" role="alert">{{ error }}</div>
+        {% endif %}
+
+        
+        <form action="" method="POST">
+            {{ form.hidden_tag() }}
+            <div class="login-box">
+                {% if message %}
+                <div class="alert alert-success" role="alert">{{ message }}</div>
+                {% endif %}
+                <h3>Forgot Password</h3>
+                <p>Please enter your email address and we will send a password reset link to your email</p>
+                <fieldset class="user-box">
+                    {{ form.email }}
+                    <label>Email</label>
+                </fieldset>
+                {{ form.submit_button(class = "btn btn-primary btn-block") }}
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock content %}

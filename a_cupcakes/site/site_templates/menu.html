@@ -1,0 +1,132 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!-- <div class="container menu-container">
+    <h1 class="menu-header">MENU</h1>
+    <div class="menu-nav">
+        <nav>  
+            <ul>
+                <a href="#cupcakes"><div class="w3-third w3-padding-large w3-red">Cupcakes</div></a>
+                <a href="#cakepops"><div class="w3-third w3-padding-large w3-hover-red">Cakepops</div></a>
+                <a href="#cakes"><div class="w3-third w3-padding-large w3-hover-red">Cakes</div></a>
+            </ul>
+        </nav>
+    </div>
+    <div class="w3-row w3-center w3-border w3-border-dark-grey">
+    </div>
+
+    <div class="menu-section">
+        <h1 id="cupcakes" class="menu-section-header">Cupcakes</h1>
+        {% for item in items %}
+        {% if item.type.lower() == 'cupcake' %}
+        <h5>{{ item.type.title() }}<span class="menu-price"> - ${{ item.price }}</span></h5>
+        <p class="w3-text-grey">{{ item.description }}</p>
+        {% endif %}
+        {% endfor %}
+        <hr>
+    </div>
+    
+    <div class="menu-section">
+        <h1 id="cakepops" class="menu-section-header">Cakepops</h1>
+        {% for item in items %}
+        {% if item.type.lower() == 'cakepop' %}
+        <h5>{{ item.type.title() }}<span class="menu-price"> - ${{ item.price }}</span></h5>
+        <p class="w3-text-grey">{{ item.description }}</p>
+        {% endif %}
+        {% endfor %}
+        <hr>
+    </div>
+    
+    <div class="menu-section">
+        <h1 id="cakes" class="menu-section-header">Cakes</h1>
+        {% for item in items %}
+        {% if item.type.lower() == 'cake' %}
+        <h5>{{ item.type.title() }}<span class="menu-price"> - ${{ item.price }}</span></h5>
+        <p class="w3-text-grey">{{ item.description }}</p>
+        {% endif %}
+        {% endfor %}
+        <hr>
+    </div>
+</div> -->
+
+<div class="shopping-body">
+    <header class="main-header">
+        <h1 class="band-name band-name-large">The Menu</h1>
+    </header>
+    <section class="container content-section">
+        <h2 class="section-header">Cupcakes</h2>
+        <div class="shop-items">
+            {% for item in items %}
+            {% if item.type.lower() == 'cupcake' %}
+            <div class="shop-item">
+                <span class="shop-item-title">{{ item.type.title() }}</span>
+                <p class="w3-text-grey">{{ item.description }}</p>
+                <!-- <img class="shop-item-image" src="Images/Album 1.png"> -->
+                <div class="shop-item-details">
+                    <span class="shop-item-price">${{ item.price }}</span>
+                </div>
+                <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+        <hr>
+    </section>
+    <section class="container content-section">
+        <h2 class="section-header">Cakepops</h2>
+        <div class="shop-items">
+            {% for item in items %}
+            {% if item.type.lower() == 'cakepop' %}
+            <div class="shop-item">
+                <span class="shop-item-title">{{ item.type.title() }}</span>
+                <p class="w3-text-grey">{{ item.description }}</p>
+                <!-- <img class="shop-item-image" src="Images/Shirt.png"> -->
+                <div class="shop-item-details">
+                    <span class="shop-item-price">${{ item.price }}</span>
+                </div>
+                <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+        <hr>
+    </section>
+    <section class="container content-section">
+        <h2 class="section-header">CART</h2>
+        <div class="cart-row">
+            <span class="cart-item cart-header cart-column">ITEM</span>
+            <span class="cart-price cart-header cart-column">PRICE</span>
+            <span class="cart-quantity cart-header cart-column">QUANTITY</span>
+        </div>
+        <div class="cart-items">
+        </div>
+        <div class="cart-total">
+            <strong class="cart-total-title">Total</strong>
+            <span class="cart-total-price">$0</span>
+        </div>
+        <button class="btn btn-primary btn-purchase" type="button">PURCHASE</button>
+    </section>
+    <footer class="main-footer">
+        <div class="container main-footer-container">
+            <h3 class="band-name">The Generics</h3>
+            <ul class="nav footer-nav">
+                <li>
+                    <a href="https://www.youtube.com" target="_blank">
+                        <!-- <img src="Images/YouTube Logo.png"> -->
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.spotify.com" target="_blank">
+                        <!-- <img src="Images/Spotify Logo.png"> -->
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.facebook.com" target="_blank">
+                        <!-- <img src="Images/Facebook Logo.png"> -->
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+</div>
+{% endblock content %}

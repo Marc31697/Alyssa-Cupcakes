@@ -1,0 +1,24 @@
+<!-- Currently Not In Use (Future Updates) -->
+{% extends 'base.html' %}
+
+{% block content %}
+
+<header class="hero-section">
+    <h3 class="header-text">
+        Welcome to Alyssa's Cupcakes {{ current_user.first_name }}!
+    </h3>
+</header>
+
+<div class="container">
+    <h3>
+        Here are your profile details.
+    </h3>
+    <ul class="list-group">
+        <li class="list-group-item">Name: {{ current_user.first_name }} {{ current_user.last_name }}</li>
+        <li class="list-group-item">Email: {{ current_user.email }}</li>
+        <li class="list-group-item">Token: {{ current_user.token }}</li>
+        <li class="list-group-item">Date Joined: {{ current_user.date_created }}</li>
+    </ul>
+</div>
+
+{% endblock content %}

@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<main class="container signin-body">
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+    {% for cat, msg in messages %}
+    {% if cat == "auth-failed" %}
+    <div class="alert alert-danger login-fail">
+        {{ msg }}
+    </div>
+    {% endif %}
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+    <div class="row">
+        <aside class="col-12 col-md-6">
+            <div class="inq-body">
+                <form action="" method="POST">
+                    {{ form.hidden_tag() }}
+                    <div class="login-box">
+                        <h1 style="text-align: center;">Sign In</h1>
+                        <fieldset class="user-box">
+                            {{ form.email }}
+                            <label>Email</label>
+                        </fieldset>
+                        <fieldset class="user-box">
+                            {{ form.password(**{"class" : 'form-control', "aria-described-by": "passwordHelpBlock"}) }}
+                            <label>Password</label>
+                        </fieldset>
+                        <span id="passwordHelpBlock" class="help-block"><a href="{{ url_for('auth.forgot_password') }}" style="margin-bottom: 25px; font-size: 12px;">Forgot Password?</a></span>
+                        <div style="margin-top: 10px;">
+                            {{ form.submit_button(class = "btn btn-primary btn-block") }}
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </aside>
+        <aside class="col-12 col-md-6">
+            
+        </aside>
+    </div>
+</main>
+{% endblock content %}

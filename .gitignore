@@ -1,0 +1,4 @@
+.env
+cup
+__pycache__
+migrations

@@ -1,0 +1,106 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!--Flask Flashed Messages to User-->
+<div class="container">
+    {% with messages = get_flashed_messages(with_categories = true) %}
+        {% if messages %}
+            {% for cat,msg in messages %}
+                {% if cat == 'user-created'%}
+                    <div class="alert alert-success">
+                        {{ msg }}
+                        <button type="button" class="close" data-dismiss = "alert">&times;</button>
+                    </div>
+
+                {% elif cat == 'auth-success' %}
+                    <div class="alert alert-success login-fail">
+                        {{ msg }}
+                    </div>
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+</div>
+
+<div class="container-fluid">
+    <!-- Header Section -->
+    <header class="row" id="head">
+        <div class="col-12 col-md-6" id="header-text">
+            <h2>Welcome to Alyssa's Cupcakes!</h2>
+            <h5>The best baked goods in town! Try one of our favorite picks or get something custom made!</h5>
+        </div>
+    </header>
+    <!-- End of Header Section -->
+
+    <!-- Start of Announcements Section -->
+    <section class="container">
+        <div class="container announcements-block">
+            <div class="announcements-header">
+                <p class="announcements-header-text">Announcements</p>
+            </div>
+            <div class="announcements">
+                {% for post in posts %}
+                <div class="announcements-box">
+                    <div class="profile-pic-box">
+                        <img src="../../static/images/profile_pic.png" class="profile-pic">
+                        <p class="profile-text">
+                            <span class="profile-name">Alyssa</span>
+                            <span class="announcement-date">{{ post.date.strftime('%B %d %Y') }}</span>
+                        </p>
+                    </div>
+                    <p style="text-align: center;">{{ post.post }}</p>
+                </div>
+                {% endfor %}
+                <div class="pages_buttons">
+                    {% if prev_url %}
+                    <a href="{{ prev_url }}">Previous</a>
+                    {% endif %}
+                    {% if next_url %}
+                    <a href="{{ next_url }}">Next</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End of Announcements Section -->
+
+    <!-- Start End Section -->
+    <section class="container">
+        <div class="col-12" id="end-text">
+            <div class="cloud"></div>
+            <h2>About Us</h2>
+            <p>We are a family run business based in Danville, VA. Originally from NJ, we fell in love with Danville and the amazing sense of community the city offers. 
+                Dedicated to making every event feel special and memorable with custom treats made just for you!</p>
+            <div class="cloud2"></div>
+        </div>
+    </section>
+    <!-- End of End Section -->
+
+   
+
+    <!-- Start of Footer -->
+    <footer class="row" id="footer">
+        <div class="col-2 col-md-2">
+            <img src="../../static/images/footer_logo.png" alt="Joker Image" id="footer-logo">
+        </div>
+
+        <div class="col-2 col-md-2">
+            <div class="footer-text-flex">
+                <h4>Social Media</h4>
+                <p><a href="https://m.facebook.com/cupcakes434/?tsid=0.8667445408328197&source=result" target="_blank" style="text-decoration: none; color: white;">Facebook</a></p>
+                <p><a href="https://www.instagram.com/alyssa.cupcakes/?utm_medium=copy_link" target = "_blank "style="text-decoration: none; color: white;">Instagram</a></p>
+            </div>
+        </div>
+
+        <div class="col-2 col-md-2">
+            <div class="footer-text-flex">
+                <h4>Help</h4>
+                <p><a href="{{ url_for('site.bugreport') }}" style="text-decoration: none; color: white;">Submit a Bug Report</a></p>
+                <p><a href="https://www.facebook.com/cupcakes434/reviews" style="text-decoration: none; color: white;">Leave a Review</a></p>
+            </div>
+        </div>
+    </footer>
+    <!-- End of footer -->
+</div>
+{% endblock content %}
