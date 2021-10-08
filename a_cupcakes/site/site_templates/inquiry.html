@@ -2,6 +2,17 @@
 
 {% block content %}
 
+{% with messages = get_flashed_messages(with_categories=true) %}
+{% if messages %}
+{% for cat, msg in messages %}
+{% if cat == 'request-sent' %}
+<div class="alert alert-success" style="display: block; width: 50%; margin-left: auto; margin-right: auto;">
+    {{ msg }}
+</div>
+{% endif %}
+{% endfor %}
+{% endif %}
+{% endwith %}
 <main class="container signup-container">
     <div class="row signup-items">
         <aside class="col-12 col-md-6">

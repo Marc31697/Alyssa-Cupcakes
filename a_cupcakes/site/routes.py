@@ -67,6 +67,8 @@ def inquiries():
         with smtplib.SMTP_SSL("smtp.gmail.com", port, context = context) as server:
             server.login(sender_email, '022420cup')
             server.sendmail(sender_email, receiver_email, message)
+        
+        flash('Your request has been sent in. Once it has been reviewed, you will receive an email with information about your order.', 'request-sent')
 
     return render_template('inquiry.html', form = form)
 

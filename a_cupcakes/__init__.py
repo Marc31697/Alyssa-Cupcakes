@@ -10,7 +10,10 @@ from flask_cors import CORS
 from flask_bootstrap import Bootstrap
 from flask_mail import Mail
 from .models import db as root_db, login_manager, ma
+import os
 
+MAIL_USER = os.environ.get('MAIL_USER')
+MAIL_PASS = os.environ.get('MAIL_PASS')
 
 app = Flask(__name__)
 bootstrap = Bootstrap(app)
@@ -18,8 +21,8 @@ bootstrap = Bootstrap(app)
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'
 app.config['MAIL_PORT'] = 465
 app.config['MAIL_USE_SSL'] = True
-app.config['MAIL_USERNAME'] = 'noreplycupcakes@gmail.com'
-app.config['MAIL_PASSWORD'] = '022420cup'
+app.config['MAIL_USERNAME'] = MAIL_USER
+app.config['MAIL_PASSWORD'] = MAIL_PASS
 mail=Mail(app)
 
 app.register_blueprint(site)
